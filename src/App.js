@@ -11,6 +11,7 @@ import Redirect from './redirect';
 import { useState } from 'react';
 import {onAuthStateChanged} from 'firebase/auth';
 import Blog_Details from './auth_blogs'
+import NotFound from './Notfound';
 
 
 function App() {
@@ -58,6 +59,9 @@ function App() {
           <Route  path='*'>
             <Redirect />    
           </Route>}
+          <Route path="*">
+              <NotFound />
+            </Route>
         </Switch>
         
       </div>
