@@ -48,10 +48,12 @@
     text-align: center;
   }
   
+
   .loginRegisterButton {
     position: absolute;
     top: 200px;
     right: 20px;
+    text-decoration: none;
     background-color: teal;
     cursor: pointer;
     padding: 10px;

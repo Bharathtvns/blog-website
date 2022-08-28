@@ -40,22 +40,31 @@
 .navbar a:hover {
   color: gold;
 }
-.waviy {
-  position: relative;
+
+.oneblog{
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  align-items: center;
+  margin: auto;
 }
-.waviy span {
-  position: relative;
-  display: inline-block;
-  font-size: 40px;
-  color: #fff;
-  text-transform: uppercase;
-  animation: flip 2s infinite;
-  animation-delay: calc(.2s * var(--i))
+
+.oneblog h1{
+  font-size: xx-large;
+  color: blue;
 }
-@keyframes flip {
-  0%,80% {
-    transform: rotateY(360deg) 
-  }
+.oneblog p{
+  font-size: 20px;
+  padding-left: 12%;
+  
+}
+.authorState{
+  padding-right:10px ;
+  text-align: right;
+}
+.oneblog button{
+  padding-left: 10px;
 }
 .content {
   max-width: 1000px;
@@ -72,6 +81,7 @@
 .blog-preview {
   padding: 10px 20px;
   margin: 20px 0;
+  
   border-bottom: 1px solid whitesmoke;
 
 }
@@ -102,6 +112,7 @@
   border: 0;
   padding: 8px;
   border-radius: 8px;
+  margin-left: 4%; 
   cursor: pointer;
 }
 .create {
@@ -133,4 +144,16 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-list{
+    display: flex;
+    flex-wrap: wrap;;
+  padding: 0%;
+  margin: 0 auto;
+  text-align: center;
+  
+
+  }
 }

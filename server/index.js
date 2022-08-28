@@ -33,12 +33,14 @@ app.post("/blogs", async (req, res) => {
     }
   });
 
-  app.get("/blogs/:id", async (req, res) => {
+  
+  app.get("/blog/:id", async (req, res) => {
     try {
       const { id } = req.params;
       const todo = await pool.query("SELECT * FROM blog WHERE blog_id = $1", [
         id
       ]);
+      console.log(id);
   
       res.json(todo.rows[0]);
     } catch (err) {
@@ -47,7 +49,19 @@ app.post("/blogs", async (req, res) => {
   });
 
 
-  app.put("/blogs/:id", async (req, res) => {
+  app.get("/blogs/:author", async (req, res) => {
+    try {
+      const {author} = req.params;
+      console.log(author);
+      const todo = await pool.query("SELECT * FROM blog WHERE author = $1",[author]);
+      
+      res.json(todo.rows[0]);
+    } catch (err) {
+      console.error(err.message);
+    }
+  });
+
+  app.put("/blog/:id", async (req, res) => {
     try {
       const { id } = req.params;
       const values = [ req.body.title, 
@@ -66,6 +80,9 @@ app.post("/blogs", async (req, res) => {
     }
   });
 
+  
+
+
   app.delete("/blogs/:id", async (req, res) => {
     try {
       const { id } = req.params;
@@ -79,5 +96,5 @@ app.post("/blogs", async (req, res) => {
   });
 
 app.listen(8000, () => {
-    console.log("server has started on port 8000");
+    console.log("server has started on port blog server 8000");
   });
